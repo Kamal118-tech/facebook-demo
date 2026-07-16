@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    
     <groupId>com.example</groupId>
     <artifactId>simple-java-app</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging> <!-- JAR packaging -->
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -14,18 +14,22 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.sonarsource.sonarqube</groupId>
+            <artifactId>sonar-plugin-api</artifactId>
+            <version>9.4.0.54424</version>
+            <scope>compile</scope>
+        </dependency>    
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin for creating executable jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -33,12 +37,20 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.App</mainClass> <!-- Main class entry -->
+                            <mainClass>com.example.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-</project>
 
+    <!-- Placed inside the pom.xml, correctly formatted -->
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <!-- Fixed double http:// and correctly placed port colon -->
+            <url>http://13.235.87.254:8081/repository/java-packages/</url>
+        </repository>
+    </distributionManagement>
+</project>
