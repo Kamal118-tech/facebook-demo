@@ -46,11 +46,11 @@
     </build>
 
     <!-- Placed inside the pom.xml, correctly formatted -->
-    <distributionManagement>
+<distributionManagement>
         <repository>
-            <id>nexus-releases</id>
-            <!-- Fixed double http:// and correctly placed port colon -->
-            <url>http://13.235.87.254:8081/repository/java-packages/</url>
+            <id>nexus-releases</id> 
+            <!-- Updated to match the private IP and default Nexus repository -->
+            <url>http://172.31.13.30:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 </project>
