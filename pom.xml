@@ -50,7 +50,7 @@
         <repository>
             <id>nexus-releases</id> 
             <!-- Updated to match the private IP and default Nexus repository -->
-            <url>http://172.31.13.30:8081/repository/maven-releases/</url>
+            <url>http://172.31.1.191:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 </project>
