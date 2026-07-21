@@ -1,3 +1,4 @@
+@library('mysharedlibraries')
 pipeline{
     agent any
 
