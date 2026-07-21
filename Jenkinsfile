@@ -16,7 +16,7 @@ pipeline{
         }
         stage('deploy package to nexus') {
             steps {
-                MavenDeploy()
+                mavenBuild()
             }
         }
 
